@@ -80,5 +80,87 @@
     margin-right: 8px;
 }
 
+.uploadModalBigDiv{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+}
 
+.uploadModalBigDiv, .uploadModalMidDiv {
+	top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
+.uploadModalMidDiv{
+	position: absolute;
+    background-color: var(--_7s0fhbb);
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 12px;
+    animation: _1ikj1x90 .4s ease-in-out;
+}
+
+.uploadModalSmallDiv{
+	padding: 40px 60px;
+    height: 100%;
+}
+
+.pictureUplode{
+    width: 380px;
+    height: 300px;
+    border: 1px dashed #ccc;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ccc;
+    font-size: 60px;
+}
+
+.fileUpload{
+	display: none;
+}
+
+.tagDiv{
+	display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.tagForm{
+	
+	
+}
+
+.tagInput{
+	border: 1px solid #ccc;
+    outline: none;
+    border-radius: 8px;
+    width: 120px;
+}
+
+.tagInput{
+	padding: 0 10px;
+    height: 30px;
+
+}
+
+.uploadButton_div{
+	display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.uploadButton{
+	width: 100%;
+    height: 40px;
+    background-color:#48BF91;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
