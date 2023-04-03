@@ -1,26 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href='resources/indexCss.css' rel="stylesheet" type="text/css">
+<script>
+	function upload() {
+		window.open('upload.JJAL','upload','width=500,height=500')
+	}
+</script>
 </head>
 <body>
  <div class="entire">
 	<header class="header">
 		<div class="header_first_div">
 			<h1 class="logo">JJAL</h1>
-			<button class="header_button">짤 업로드</button>
+			<input type="button" class="header_button" value="짤 업로드" onclick="upload()">
 		</div>
 	</header>
 	
-	<div>
+	<div> <!-- 검색창 -->
 		<div class="searachBody">
 			<div class="searachBody_inDiv">
 				<h2>JJAL Collection</h2>
-				<form action="" class="search_form">
+				<form class="search_form">
 					<input class="search_input" type="text" placeholder="짤 검색">
 				</form>
 				<div class="input_under">
@@ -37,29 +44,18 @@
 			</div>
 		</div>
 	</div>
- </div>
- <div><!-- 모달 창 만들기 -->
+	
 	<div>
-		<div class="uploadModalBigDiv">
-			<div class="uploadModalMidDiv" style="width: 500px; height: 550px;">
-				<div class="uploadModalSmallDiv" style="background-color: white;">
-					<span style="font-size: 20pt;">짤 업로드</span>
-						<label class="pictureUplode"> <!-- photo upload -->
-						+
-						<input class="fileUpload" type="file">
-						</label>
-						<div class="tagDiv"> <!-- 태그 입력 하는 Div -->
-							<form class="tagForm" action="">
-								<input class="tagInput" type="text" placeholder="태그 입력">
-							</form>
-						</div>
-						<div class="uploadButton_div">
-							<button class="uploadButton">등록</button>
-						</div>
-				</div>
-			</div>
-		</div>
-	</div> 
+		<table>
+			<c:forEach items="${picture}" var="p">
+				<tr>
+					<td><img src="resources/img/${p.img }" style="max-width: 100px;"></td>
+				</tr>
+			</c:forEach>
+		</table>	
+	</div>
  </div>
+ 
+ 
 </body>
 </html>
