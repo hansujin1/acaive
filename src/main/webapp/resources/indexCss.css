@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Brush+Script&display=swap');
 
 .header{
 	width: 100%;
@@ -15,17 +17,42 @@
 }
 
 .logo{
-	font-size: 24px;
+	font-size: 30px;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-family: 'Nanum Brush Script', cursive;
 }
 .header_button {
     height: 40px;
+    width:100px;
     padding: 10px 16px;
     background-color: #48BF91;
     border: none;
     border-radius: 8px;
     color: white;
+    font-family: 'Jua', sans-serif;
+	font-family: 'Nanum Brush Script', cursive;
+}
+
+.header_login_button{
+	height: 40px;
+    width:100px;
+	padding: 10px 16px;
+	background-color: white;
+	border: medium solid #48BF91;
+	border-radius: 8px;
+	font-family: 'Jua', sans-serif;
+	font-family: 'Nanum Brush Script', cursive;
+}
+
+.header_login_button:hover{
+	background-color: #CFE6D6;
+}
+
+.header_button:hover{
+	background-color: #63C79F;
 }
 
 .searachBody{
@@ -141,6 +168,58 @@
     border-radius: 6px;
     cursor: pointer;
 }
+
+.tableBigDiv{
+	width: 1024px;
+    margin: 40px auto 0;
+    margin-bottom: 80px;
+}
+
+.tableMiddleDiv{
+	display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 10px;
+}
+
+.tablesmallDiv{
+	width: 240px;
+    height: 180px;
+    background-color: #d6d2d2;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.picture{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tablesmallDiv:hover {
+	transform: scale(1.2);
+	 overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

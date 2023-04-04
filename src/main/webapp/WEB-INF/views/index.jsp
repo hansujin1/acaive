@@ -14,46 +14,20 @@
 	}
 </script>
 </head>
-<body>
+<body style="height: 100%;">
  <div class="entire">
 	<header class="header">
 		<div class="header_first_div">
-			<h1 class="logo">JJAL</h1>
-			<input type="button" class="header_button" value="짤 업로드" onclick="upload()">
+			<a class="logo" href="/test">JJAL</a>
+			<div>
+				<input type="button" class="header_button" value="짤 업로드" onclick="upload()">
+				<input type="button" class="header_login_button" value="로 그 인">
+			</div>
 		</div>
 	</header>
 	
-	<div> <!-- 검색창 -->
-		<div class="searachBody">
-			<div class="searachBody_inDiv">
-				<h2>JJAL Collection</h2>
-				<form class="search_form">
-					<input class="search_input" type="text" placeholder="짤 검색">
-				</form>
-				<div class="input_under">
-					<div class="input_text">전체</div>
-					<div class="input_text">솔로</div>
-					<div class="input_text">빡침</div>
-					<div class="input_text">분노</div>
-					<div class="input_text">놀람</div>
-					<div class="input_text">눈물</div>
-					<div class="input_text">표정</div>
-					<div class="input_text">병맛</div>
-					<div class="input_text">섭섭</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<jsp:include page="${contentPage}"></jsp:include>
 	
-	<div>
-		<table>
-			<c:forEach items="${picture}" var="p">
-				<tr>
-					<td><img src="resources/img/${p.img }" style="max-width: 100px;"></td>
-				</tr>
-			</c:forEach>
-		</table>	
-	</div>
  </div>
  
  

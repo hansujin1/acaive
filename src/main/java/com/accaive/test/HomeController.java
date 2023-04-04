@@ -23,17 +23,27 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {
-		
+	//처음 home 페이지	
 		//모든 정보가 나올 수 있도록
 		pDAO.getAllJJAL(req);
+		req.setAttribute("contentPage", "home.jsp");
 		
 		return "index";
 	}
 	
 	@RequestMapping(value = "/upload.JJAL", method = RequestMethod.GET)
-	public String uploadJjal() {
+	public String uploadJjalGo() {
+	//짤 업로드 하는 창으로 가는 것
 		
 		return "upload";
 	}
+	
+	@RequestMapping(value = "/jjal.upload", method = RequestMethod.POST)
+	public String uploadJjal() {
+		//짤 업로드 하기
+		
+		return "upload";
+	}
+	
 	
 }
