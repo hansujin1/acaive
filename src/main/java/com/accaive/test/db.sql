@@ -10,3 +10,5 @@ select * from JJAL;
 create sequence jjal_seq;
 
 insert into JJAL values(jjal_seq.nextval,'a.jpg','사12','20');
+
+delete from JJAL where p_no='41'; 

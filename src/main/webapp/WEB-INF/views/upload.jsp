@@ -10,17 +10,18 @@
 <body>
 <div><!-- 모달 창 만들기 -->
 	<div>
-		<form name="form" action="jjal.upload" method="post" enctype="multipart/form-data">
+		<form action="jjal.upload" method="post" enctype="multipart/form-data">
 			<div class="uploadModalBigDiv">
 				<div class="uploadModalMidDiv" style="width: 500px; height: 550px;">
 					<div class="uploadModalSmallDiv">
 						<span style="font-size: 20pt;">짤 업로드</span>
 							<label class="pictureUplode"> <!-- photo upload -->
 							+
-							<input class="fileUpload" type="file">
+							<input class="fileUpload" type="file" name="img">
+							
 							</label>
 							<div class="tagDiv"> <!-- 태그 입력 하는 Div -->
-								<input class="tagInput" type="text" placeholder="태그 입력">
+								<input class="tagInput" type="text" placeholder="태그 입력" name="tag" id="tag">
 							</div>
 							<div class="uploadButton_div">
 								<button class="uploadButton">등록</button>

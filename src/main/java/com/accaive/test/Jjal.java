@@ -44,16 +44,16 @@ public class Jjal {
 		this.tag = tag;
 	}
 
-	public String getScore() {
+	public int getScore() {
 		return score;
 	}
 
-	public void setScore(String score) {
+	public void setScore(int score) {
 		this.score = score;
 	}
-
-
-
+	
+	
+	
 	
 	
 	

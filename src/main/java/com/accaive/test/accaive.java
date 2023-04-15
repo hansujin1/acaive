@@ -6,5 +6,7 @@ public interface accaive {
 
 	List<Jjal> getAllPricture();
 
+	int regJJAL(Jjal j);
+
 
 }

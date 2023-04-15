@@ -35,7 +35,7 @@
 		<div class="tableMiddleDiv">
 			<c:forEach items="${picture}" var="p">
 				<div class="tablesmallDiv">
-					<img src="resources/img/${p.img }" class="picture">
+					<img src="resources/img/${p.img}" class="picture">
 				</div>
 			</c:forEach>
 		</div>	

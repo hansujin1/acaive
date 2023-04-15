@@ -5,5 +5,9 @@
 	<select id="getAllPricture" resultType="com.accaive.test.Jjal" >
 	select * from JJAL
 	</select>
+	
+	<insert id="regJJAL" >
+	insert into JJAL values(jjal_seq.nextval,#{img},#{tag},'20')
+	</insert>
 
 </mapper>

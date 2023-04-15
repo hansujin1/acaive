@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
+
 @Controller
 public class HomeController {
 	
@@ -39,9 +40,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/jjal.upload", method = RequestMethod.POST)
-	public String uploadJjal() {
-		//짤 업로드 하기
+	public String regJJAL(Jjal j,HttpServletRequest req) {
 		
+		//정보 등록하는 일 하기
+		pDAO.regJJAL(j,req);
+
 		return "upload";
 	}
 	
