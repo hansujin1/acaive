@@ -9,5 +9,9 @@
 	<insert id="regJJAL" >
 	insert into JJAL values(jjal_seq.nextval,#{img},#{tag},'20')
 	</insert>
+	
+	<select id="getJjal" resultType="com.accaive.test.Jjal" >
+	select * from JJAL where p_no = #{p_no}
+	</select>
 
 </mapper>

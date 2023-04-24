@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href='resources/indexCss.css' rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 	function upload() {
 		window.open('upload.JJAL','upload','width=500,height=500')

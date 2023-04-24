@@ -8,5 +8,7 @@ public interface accaive {
 
 	int regJJAL(Jjal j);
 
+	public Jjal getJjal(Jjal j);
+
 
 }

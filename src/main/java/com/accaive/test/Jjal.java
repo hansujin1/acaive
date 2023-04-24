@@ -3,7 +3,7 @@ package com.accaive.test;
 import java.util.List;
 
 public class Jjal {
-	private int pk;
+	private int p_no;
 	private String img;
 	private String tag;
 	private String score;
@@ -12,20 +12,20 @@ public class Jjal {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Jjal(int pk, String img, String tag, String score) {
+	public Jjal(int p_no, String img, String tag, String score) {
 		super();
-		this.pk = pk;
+		this.p_no = p_no;
 		this.img = img;
 		this.tag = tag;
 		this.score = score;
 	}
 
-	public int getPk() {
-		return pk;
+	public int getP_no() {
+		return p_no;
 	}
 
-	public void setPk(int pk) {
-		this.pk = pk;
+	public void setP_no(int p_no) {
+		this.p_no = p_no;
 	}
 
 	public String getImg() {
@@ -44,11 +44,11 @@ public class Jjal {
 		this.tag = tag;
 	}
 
-	public int getScore() {
+	public String getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(String score) {
 		this.score = score;
 	}
 	

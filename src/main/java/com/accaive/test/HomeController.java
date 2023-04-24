@@ -48,5 +48,15 @@ public class HomeController {
 		return "upload";
 	}
 	
+	@RequestMapping(value = "/detailPage.go", method = RequestMethod.GET)
+	public String detailPageGo(HttpServletRequest req,Jjal j) {
+		
+		//디테일 페이지로 이동하기
+		pDAO.getJJAL(req,j);
+		req.setAttribute("contentPage", "detailPage.jsp");
+		
+		return "index";
+	}
+	
 	
 }

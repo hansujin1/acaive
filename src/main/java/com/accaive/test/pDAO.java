@@ -53,6 +53,16 @@ public class pDAO {
 		
 	}
 
+	public void getJJAL(HttpServletRequest req, Jjal j) {
+		// Detail page
+		try {
+			req.setAttribute("picture", ss.getMapper(accaive.class).getJjal(j));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+
 	
 	
 	
