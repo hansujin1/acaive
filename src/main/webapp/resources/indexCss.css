@@ -161,13 +161,14 @@
 }
 
 .uploadButton{
-	width: 100%;
+	width: 50%;
     height: 40px;
     background-color: #48bf91;
     border: none;
     color: white;
     border-radius: 6px;
     cursor: pointer;
+    margin-left: 15px;
 }
 
 .tableBigDiv{

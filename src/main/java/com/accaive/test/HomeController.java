@@ -25,6 +25,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(HttpServletRequest req) {
 	//처음 home 페이지	
+		
+		//로그인 확인
+		
 		//모든 정보가 나올 수 있도록
 		pDAO.getAllJJAL(req);
 		req.setAttribute("contentPage", "home.jsp");

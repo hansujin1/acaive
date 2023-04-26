@@ -4,20 +4,22 @@ import java.util.List;
 
 public class Jjal {
 	private int p_no;
+	private String empno;
 	private String img;
 	private String tag;
-	private String score;
+	private String explanation;
 
 	public Jjal() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Jjal(int p_no, String img, String tag, String score) {
+	public Jjal(int p_no, String empno, String img, String tag, String explanation) {
 		super();
 		this.p_no = p_no;
+		this.empno = empno;
 		this.img = img;
 		this.tag = tag;
-		this.score = score;
+		this.explanation = explanation;
 	}
 
 	public int getP_no() {
@@ -26,6 +28,14 @@ public class Jjal {
 
 	public void setP_no(int p_no) {
 		this.p_no = p_no;
+	}
+
+	public String getEmpno() {
+		return empno;
+	}
+
+	public void setEmpno(String empno) {
+		this.empno = empno;
 	}
 
 	public String getImg() {
@@ -44,13 +54,15 @@ public class Jjal {
 		this.tag = tag;
 	}
 
-	public String getScore() {
-		return score;
+	public String getExplanation() {
+		return explanation;
 	}
 
-	public void setScore(String score) {
-		this.score = score;
+	public void setExplanation(String explanation) {
+		this.explanation = explanation;
 	}
+
+	
 	
 	
 	

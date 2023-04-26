@@ -23,8 +23,12 @@
 							<div class="tagDiv"> <!-- 태그 입력 하는 Div -->
 								<input class="tagInput" type="text" placeholder="태그 입력" name="tag" id="tag">
 							</div>
+							<div class="tagDiv">
+								<textarea name="explanation"></textarea>
+							</div>
 							<div class="uploadButton_div">
 								<button class="uploadButton">등록</button>
+								<input type="button" onclick="window.close();" class="uploadButton" value="닫기">
 							</div>
 					</div>
 				</div>

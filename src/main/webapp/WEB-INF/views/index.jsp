@@ -22,7 +22,8 @@
 			<a class="logo" href="/test">JJAL</a>
 			<div>
 				<input type="button" class="header_button" value="짤 업로드" onclick="upload()">
-				<input type="button" class="header_login_button" value="로 그 인">
+				<%-- <jsp:include page="${loginPage }"></jsp:include> --%>
+				<a href="loginGo">로그인</a>
 			</div>
 		</div>
 	</header>

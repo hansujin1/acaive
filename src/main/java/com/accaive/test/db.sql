@@ -1,8 +1,22 @@
 create table jjal(
 	p_no number(4) primary key,
+	empno number(4) not null,
 	img varchar2(200 char) not null,
 	tag varchar2(200 char) not null,
-	score varchar2(100 char) not null
+	explanation varchar2(400 char) not null
+);
+
+create table AI(
+	p_no number(4) primary key,
+	score varchar2(100 char) not null,
+	tag varchar2(200 char) not null
+);
+
+create table member(
+	empno number(4) primary key,
+	id varchar2(20 char) not null,
+	pw varchar2(20 char) not null,
+	nickname varchar2(20 char) not null
 );
 
 select * from JJAL;
@@ -16,3 +30,7 @@ delete from JJAL where p_no='41';
 drop table JJAL cascade constraints purge;
 drop SEQUENCE jjal_seq;
 create SEQUENCE jjal_seq INCREMENT by 1 start with 1;
+
+select * from MEMBER;
+
+drop table MEMBER cascade constraints purge;

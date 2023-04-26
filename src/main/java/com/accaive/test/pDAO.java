@@ -36,9 +36,11 @@ public class pDAO {
 			
 			String img = mr.getFilesystemName("img");
 			String tag = mr.getParameter("tag");
+			String explanation = mr.getParameter("explanation");
 			
 			j.setImg(img);
 			j.setTag(tag);
+			j.setExplanation(explanation);
 			
 			accaive mm = ss.getMapper(accaive.class);
 			if (mm.regJJAL(j) > 0) {

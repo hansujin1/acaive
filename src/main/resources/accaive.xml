@@ -7,7 +7,7 @@
 	</select>
 	
 	<insert id="regJJAL" >
-	insert into JJAL values(jjal_seq.nextval,#{img},#{tag},'20')
+	insert into JJAL values(jjal_seq.nextval,'0001',#{img},#{tag},#{explanation})
 	</insert>
 	
 	<select id="getJjal" resultType="com.accaive.test.Jjal" >
