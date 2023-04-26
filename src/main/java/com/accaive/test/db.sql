@@ -24,12 +24,14 @@ select * from JJAL;
 create sequence jjal_seq;
 
 insert into JJAL values(jjal_seq.nextval,'a.jpg','영화','20');
+insert into member values(empno_seq.nextval,'tn3651','1','닉네임');
 
 delete from JJAL where p_no='41'; 
 
 drop table JJAL cascade constraints purge;
 drop SEQUENCE jjal_seq;
 create SEQUENCE jjal_seq INCREMENT by 1 start with 1;
+create SEQUENCE empno_seq INCREMENT by 1 start with 1;
 
 select * from MEMBER;
 

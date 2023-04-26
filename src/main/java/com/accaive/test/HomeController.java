@@ -26,8 +26,6 @@ public class HomeController {
 	public String home(HttpServletRequest req) {
 	//처음 home 페이지	
 		
-		//로그인 확인
-		
 		//모든 정보가 나올 수 있도록
 		pDAO.getAllJJAL(req);
 		req.setAttribute("contentPage", "home.jsp");
@@ -36,10 +34,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/upload.JJAL", method = RequestMethod.GET)
-	public String uploadJjalGo() {
+	public String uploadJjalGo(HttpServletRequest req) {
 	//짤 업로드 하는 창으로 가는 것
-		
-		return "upload";
+		req.setAttribute("contentPage", "upload.jsp");
+		return "index";
 	}
 	
 	@RequestMapping(value = "/jjal.upload", method = RequestMethod.POST)
@@ -47,8 +45,9 @@ public class HomeController {
 		
 		//정보 등록하는 일 하기
 		pDAO.regJJAL(j,req);
+		req.setAttribute("contentPage", "upload.jsp");
 
-		return "upload";
+		return "index";
 	}
 	
 	@RequestMapping(value = "/detailPage.go", method = RequestMethod.GET)
@@ -57,6 +56,26 @@ public class HomeController {
 		//디테일 페이지로 이동하기
 		pDAO.getJJAL(req,j);
 		req.setAttribute("contentPage", "detailPage.jsp");
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/logingo", method = RequestMethod.GET)
+	public String logingo(HttpServletRequest req) {
+		//로그인 페이지로 이동
+		
+		req.setAttribute("contentPage", "loginpage.jsp");
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/logingo.do", method = RequestMethod.POST)
+	public String loginDo(HttpServletRequest req) {
+		//로그인 하기
+		
+		//pDAO.login(req,m);
+		pDAO.getAllJJAL(req);
+		req.setAttribute("contentPage", "home.jsp");
 		
 		return "index";
 	}

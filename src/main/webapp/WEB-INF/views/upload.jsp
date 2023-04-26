@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +16,7 @@
 			<div class="uploadModalBigDiv">
 				<div class="uploadModalMidDiv" style="width: 500px; height: 550px;">
 					<div class="uploadModalSmallDiv">
-						<span style="font-size: 20pt;">짤 업로드</span>
+						<span style="font-size: 20pt;">짤 업로드</span> &nbsp; ${r}
 							<label class="pictureUplode"> <!-- photo upload -->
 							+
 							<input class="fileUpload" type="file" name="img">
@@ -24,10 +26,10 @@
 								<input class="tagInput" type="text" placeholder="태그 입력" name="tag" id="tag">
 							</div>
 							<div class="tagDiv">
-								<textarea name="explanation"></textarea>
+								<textarea name="explanation" style="width: 800px;height: 80px;"></textarea>
 							</div>
 							<div class="uploadButton_div">
-								<button class="uploadButton">등록</button>
+								<button class="uploadButton_in">등록</button>
 								<input type="button" onclick="window.close();" class="uploadButton" value="닫기">
 							</div>
 					</div>

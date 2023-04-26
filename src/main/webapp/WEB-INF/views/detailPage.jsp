@@ -22,6 +22,9 @@
 		<div>
 			${picture.tag }
 		</div>
+		<div>
+			${picture.explanation }
+		</div>
 	</div>
 </div>
 </body>

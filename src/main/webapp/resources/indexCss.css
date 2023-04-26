@@ -108,13 +108,24 @@
 }
 
 .uploadModalMidDiv{
-	position: absolute;
+	/* position: absolute; */
     background-color: white;
     bottom: 0;
     right: 0;
     margin: auto;
     border-radius: 12px;
     animation: _1ikj1x90 .4s ease-in-out;
+}
+
+.uploadModalMidDiv_login{
+	/* position: absolute; */
+    background-color: white;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 12px;
+    animation: _1ikj1x90 .4s ease-in-out;
+    margin-top: 20px;
 }
 
 .uploadModalSmallDiv{
@@ -168,7 +179,18 @@
     color: white;
     border-radius: 6px;
     cursor: pointer;
-    margin-left: 15px;
+    margin-left: 20px;
+}
+
+.uploadButton_in{
+	width: 50%;
+    height: 40px;
+    background-color: #48bf91;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .tableBigDiv{
@@ -216,7 +238,11 @@
     border: 2px solid gray;
 }
 
-
+.login_id{
+	display: flex;
+	margin-top: 20px;
+	
+}
 
 
 

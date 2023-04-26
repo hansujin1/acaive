@@ -21,9 +21,8 @@
 		<div class="header_first_div">
 			<a class="logo" href="/test">JJAL</a>
 			<div>
-				<input type="button" class="header_button" value="짤 업로드" onclick="upload()">
-				<%-- <jsp:include page="${loginPage }"></jsp:include> --%>
-				<a href="loginGo">로그인</a>
+				<input type="button" class="header_button" value="짤 업로드" onclick="location.href='upload.JJAL' ">
+				<input type="button" class="header_login_button" value="로 그 인" onclick="location.href='logingo' ">
 			</div>
 		</div>
 	</header>
