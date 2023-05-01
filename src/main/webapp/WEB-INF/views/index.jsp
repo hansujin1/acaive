@@ -21,8 +21,10 @@
 		<div class="header_first_div">
 			<a class="logo" href="/test">JJAL</a>
 			<div>
+			<c:if test="${not empty sessionScope.loginMemeber}">
 				<input type="button" class="header_button" value="짤 업로드" onclick="location.href='upload.JJAL' ">
-				<input type="button" class="header_login_button" value="로 그 인" onclick="location.href='logingo' ">
+			</c:if>
+				<jsp:include page="${loginPage}"></jsp:include>
 			</div>
 		</div>
 	</header>

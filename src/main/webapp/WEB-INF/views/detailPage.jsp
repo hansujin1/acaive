@@ -16,6 +16,7 @@
 		</span>
 	</div>
 	<div>
+		<div>${picture.nickname }</div>
 		<div class="detaillImg">
 			<img src="resources/img/${picture.img}" class="picture">
 		</div>

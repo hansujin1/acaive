@@ -10,5 +10,7 @@ public interface accaive {
 
 	public Jjal getJjal(Jjal j);
 
+	Member getMemberId(Member m);
+
 
 }

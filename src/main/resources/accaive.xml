@@ -7,11 +7,18 @@
 	</select>
 	
 	<insert id="regJJAL" >
-	insert into JJAL values(jjal_seq.nextval,'0001',#{img},#{tag},#{explanation})
+	insert into JJAL values(jjal_seq.nextval,#{empno},#{img},#{tag},#{explanation})
 	</insert>
 	
 	<select id="getJjal" resultType="com.accaive.test.Jjal" >
-	select * from JJAL where p_no = #{p_no}
+	select JJAL.P_NO,JJAL.EMPNO,JJAL.IMG,JJAL.TAG,JJAL.EXPLANATION,MEMBER.NICKNAME 
+	from JJAL,Member 
+	where MEMBER.EMPNO = JJAL.EMPNO
+	AND JJAL.P_NO= #{p_no}
+	</select>
+	
+	<select id="getMemberId" resultType="com.accaive.test.Member">
+	select * from member where id = #{id}
 	</select>
 
 </mapper>

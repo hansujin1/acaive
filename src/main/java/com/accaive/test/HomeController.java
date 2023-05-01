@@ -28,6 +28,7 @@ public class HomeController {
 		
 		//모든 정보가 나올 수 있도록
 		pDAO.getAllJJAL(req);
+		pDAO.checkLogin(req);
 		req.setAttribute("contentPage", "home.jsp");
 		
 		return "index";
@@ -36,6 +37,7 @@ public class HomeController {
 	@RequestMapping(value = "/upload.JJAL", method = RequestMethod.GET)
 	public String uploadJjalGo(HttpServletRequest req) {
 	//짤 업로드 하는 창으로 가는 것
+		pDAO.checkLogin(req);
 		req.setAttribute("contentPage", "upload.jsp");
 		return "index";
 	}
@@ -45,6 +47,7 @@ public class HomeController {
 		
 		//정보 등록하는 일 하기
 		pDAO.regJJAL(j,req);
+		pDAO.checkLogin(req);
 		req.setAttribute("contentPage", "upload.jsp");
 
 		return "index";
@@ -55,6 +58,7 @@ public class HomeController {
 		
 		//디테일 페이지로 이동하기
 		pDAO.getJJAL(req,j);
+		pDAO.checkLogin(req);
 		req.setAttribute("contentPage", "detailPage.jsp");
 		
 		return "index";
@@ -64,18 +68,24 @@ public class HomeController {
 	public String logingo(HttpServletRequest req) {
 		//로그인 페이지로 이동
 		
+		pDAO.checkLogin(req);
 		req.setAttribute("contentPage", "loginpage.jsp");
 		
 		return "index";
 	}
 	
 	@RequestMapping(value = "/logingo.do", method = RequestMethod.POST)
-	public String loginDo(HttpServletRequest req) {
+	public String loginDo(HttpServletRequest req, Member m) {
 		//로그인 하기
 		
-		//pDAO.login(req,m);
-		pDAO.getAllJJAL(req);
-		req.setAttribute("contentPage", "home.jsp");
+		if (pDAO.login(req,m)) {
+			pDAO.getAllJJAL(req);
+			req.setAttribute("contentPage", "home.jsp");
+		}else {
+			req.setAttribute("r", "ID 또는 PW가 잘못 되었습니다.");
+			req.setAttribute("contentPage", "loginpage.jsp");
+		}
+		pDAO.checkLogin(req);
 		
 		return "index";
 	}

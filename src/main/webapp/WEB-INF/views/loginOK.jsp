@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<input type="button" class="header_login_button" value="로 그 인" onclick="location.href='logingo' ">
+${sessionScope.loginMemeber.nickname }님(로그아웃 미 구현)
 </body>
 </html>

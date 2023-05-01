@@ -38,9 +38,13 @@ public class pDAO {
 			String tag = mr.getParameter("tag");
 			String explanation = mr.getParameter("explanation");
 			
+			Member member = (Member) req.getSession().getAttribute("loginMemeber");
+			String empno = member.getEmpno();
+			
 			j.setImg(img);
 			j.setTag(tag);
 			j.setExplanation(explanation);
+			j.setEmpno(empno);
 			
 			accaive mm = ss.getMapper(accaive.class);
 			if (mm.regJJAL(j) > 0) {
@@ -62,6 +66,47 @@ public class pDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+	}
+
+	public boolean login(HttpServletRequest req, Member m) {
+		// DO login
+		try {
+			Member dbMember = ss.getMapper(accaive.class).getMemberId(m);
+			
+			if (dbMember != null) {
+				if (m.getPw().equals(dbMember.getPw())) {
+					// PW가 같다  -> 세션 생성
+					req.getSession().setAttribute("loginMemeber", dbMember);
+					req.getSession().setMaxInactiveInterval(60*60);
+					
+					return true;
+				}else {
+					//pw가 다르다
+					return false;
+				}
+			}else {
+				//ID가 존재하지 않는다.
+				return false;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+	}
+
+	public void checkLogin(HttpServletRequest req) {
+		// 로그인 체크
+		if (req.getSession().getAttribute("loginMemeber") != null) {
+			//세션 있음
+			req.setAttribute("loginPage", "loginOK.jsp");
+		}else {
+			//세션 없음
+			req.setAttribute("loginPage", "login.jsp");
+		}
+		
 		
 	}
 

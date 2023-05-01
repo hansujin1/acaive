@@ -1,25 +1,25 @@
 package com.accaive.test;
 
-import java.util.List;
-
 public class Jjal {
 	private int p_no;
 	private String empno;
 	private String img;
 	private String tag;
 	private String explanation;
+	private String nickname;
 
 	public Jjal() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Jjal(int p_no, String empno, String img, String tag, String explanation) {
+	public Jjal(int p_no, String empno, String img, String tag, String explanation, String nickname) {
 		super();
 		this.p_no = p_no;
 		this.empno = empno;
 		this.img = img;
 		this.tag = tag;
 		this.explanation = explanation;
+		this.nickname = nickname;
 	}
 
 	public int getP_no() {
@@ -61,6 +61,16 @@ public class Jjal {
 	public void setExplanation(String explanation) {
 		this.explanation = explanation;
 	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNicname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	
 
 	
 	
