@@ -8,6 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-${sessionScope.loginMemeber.nickname }님(로그아웃 미 구현)
+<div class="loginOK-dropdown" >
+      <span class="loginOK-dropbtn">${sessionScope.loginMemeber.nickname }님</span>
+      <div class="loginOK-dropdown-content">
+        <a href="#">my page</a>
+        <a href="logout">logout</a>
+      </div>
+    </div> 
 </body>
 </html>

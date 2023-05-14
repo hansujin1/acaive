@@ -215,8 +215,7 @@
 
 .picture{
 	width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height:100%;
 }
 
 .tablesmallDiv:hover {
@@ -235,6 +234,7 @@
     height: 500px;
     margin-left: 30%;
     padding:10px;
+    object-fit: cover;
     border: 2px solid gray;
 }
 
@@ -244,13 +244,148 @@
 	
 }
 
+.nicknameDlt{
+	margin-left: 1000px;
+	margin-bottom: 10px;
+}
+
+.tagList{
+	background-color: #BDBDBD;
+    border-radius: 6px;
+    padding: 0px 5px 0px 5px;
+    margin: 0px 5px 0px 5px;
+}
+
+.tagBigDiv{
+	display: flex;
+	margin-top: 10px;
+	margin-left:450px;
+}
+
+.jjalExplanation{
+	background-color: #BDBDBD;
+    margin-top: 10px;
+    margin-left: 460px;
+    width: 600px;
+    height: 60px;
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+/* ----------로그인 후 드롭 다운------------------------------------- */
+.loginOK-dropdown{
+  position : relative;
+  display : inline-block;
+}
+
+.loginOK-dropdown-content{
+  display : none;
+  position : absolute;
+  z-index : 9999; /*다른 요소들보다 앞에 배치*/
+  width: 70px;
+  text-align: center;
+  right: -10px;
+  background-color: #48BF91;
+}
+
+.loginOK-dropdown-content a{
+  display : block;
+  color: white;
+  padding: 5px 0px 5px 0px;
+}
+
+.loginOK-dropdown:hover .loginOK-dropdown-content {
+  display: block;
+  
+}
+
+.loginOK-dropdown-content a:hover{
+	background-color:black;
+}
 
 
+a{
+	text-decoration: none;
+}
 
 
+/* ---------회원가입 페이지 */
+
+.joinForm {
+  position:absolute;
+  width:400px;
+  height:400px;
+  padding: 30px, 20px;
+  background-color:#FFFFFF;
+  text-align:center;
+  top:40%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border-radius: 15px;
+}
+
+.joinForm h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+.textForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
 
 
+.id {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
 
+.pw {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.nickname {
+  width: 100%;
+  border:none;
+  outline:none;
+  color: #636e72;
+  font-size:16px;
+  height:25px;
+  background: none;
+}
+
+.btn {
+  position:relative;
+  left:40%;
+  transform: translateX(-50%);
+  margin-bottom: 40px;
+  width:80%;
+  height:40px;
+  background: linear-gradient(125deg,#48BF91,#6c5ce7,#81ecec);
+  background-position: left;
+  background-size: 200%;
+  color:white;
+  font-weight: bold;
+  border:none;
+  cursor:pointer;
+  transition: 0.4s;
+  display:inline;
+}
+
+.btn:hover {
+  background-position: right;
+}
 
 
 

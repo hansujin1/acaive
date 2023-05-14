@@ -12,5 +12,9 @@ public interface accaive {
 
 	Member getMemberId(Member m);
 
+	int join(Member m);
+
+	List<Jjal> getSearchPricture(Jjal j);
+
 
 }

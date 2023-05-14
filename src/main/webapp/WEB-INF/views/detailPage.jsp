@@ -16,15 +16,19 @@
 		</span>
 	</div>
 	<div>
-		<div>${picture.nickname }</div>
+		<div class="nicknameDlt">작성자 : ${picture.nickname }</div>
 		<div class="detaillImg">
 			<img src="resources/img/${picture.img}" class="picture">
 		</div>
-		<div>
-			${picture.tag }
+		<div class="tagBigDiv">
+			<c:forEach items="${tag}" var="t">
+				<c:if test="${not empty t }">
+					<div class="tagList"> #${t} </div>
+				</c:if>
+			</c:forEach>
 		</div>
 		<div>
-			${picture.explanation }
+			 <pre class="jjalExplanation">${picture.explanation }</pre> 
 		</div>
 	</div>
 </div>

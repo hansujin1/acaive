@@ -62,7 +62,11 @@ public class pDAO {
 	public void getJJAL(HttpServletRequest req, Jjal j) {
 		// Detail page
 		try {
-			req.setAttribute("picture", ss.getMapper(accaive.class).getJjal(j));
+			Jjal JJAL = ss.getMapper(accaive.class).getJjal(j);
+			String tag = JJAL.getTag();
+			String[] tagArrat = tag.split("#");
+			req.setAttribute("picture", JJAL);
+			req.setAttribute("tag", tagArrat);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -107,6 +111,42 @@ public class pDAO {
 			req.setAttribute("loginPage", "login.jsp");
 		}
 		
+		
+	}
+
+	public void logout(HttpServletRequest req) {
+		//로그 아웃
+		req.getSession().setAttribute("loginMemeber", null);
+		
+	}
+
+	public void join(HttpServletRequest req, Member m) {
+		// 회원가입
+		
+				try {
+					req.setCharacterEncoding("utf-8");
+					
+					if (ss.getMapper(accaive.class).join(m) == 1) {
+						System.out.println("성공");
+						login(req,m);
+					}else {
+						System.out.println("실패");
+					}
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+		
+	}
+
+	public void searchJJAL(HttpServletRequest req, Jjal j) {
+		// 짤 찾기 
+		
+		accaive mm = ss.getMapper(accaive.class);
+		
+		List<Jjal> JJAL = mm.getSearchPricture(j);
+		
+		req.setAttribute("picture", JJAL);
 		
 	}
 

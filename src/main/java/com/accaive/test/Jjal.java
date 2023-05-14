@@ -7,12 +7,13 @@ public class Jjal {
 	private String tag;
 	private String explanation;
 	private String nickname;
+	private String search;
 
 	public Jjal() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Jjal(int p_no, String empno, String img, String tag, String explanation, String nickname) {
+	public Jjal(int p_no, String empno, String img, String tag, String explanation, String nickname, String search) {
 		super();
 		this.p_no = p_no;
 		this.empno = empno;
@@ -20,6 +21,7 @@ public class Jjal {
 		this.tag = tag;
 		this.explanation = explanation;
 		this.nickname = nickname;
+		this.search = search;
 	}
 
 	public int getP_no() {
@@ -66,17 +68,18 @@ public class Jjal {
 		return nickname;
 	}
 
-	public void setNicname(String nickname) {
+	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
 
-	
+	public String getSearch() {
+		return search;
+	}
 
-	
-	
-	
-	
-	
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
 	
 	
 }

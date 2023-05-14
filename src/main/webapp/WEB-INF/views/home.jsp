@@ -13,33 +13,24 @@
 		<div class="searachBody">
 			<div class="searachBody_inDiv">
 				<h2>JJAL Collection</h2>
-				<form class="search_form">
-					<input class="search_input" type="text" placeholder="짤 검색">
+				<form class="search_form" action="search">
+					<input class="search_input" type="text" placeholder="짤 검색" name="search">
 				</form>
-				<div class="input_under">
-					<div class="input_text">전체</div>
-					<div class="input_text">솔로</div>
-					<div class="input_text">빡침</div>
-					<div class="input_text">분노</div>
-					<div class="input_text">놀람</div>
-					<div class="input_text">눈물</div>
-					<div class="input_text">표정</div>
-					<div class="input_text">병맛</div>
-					<div class="input_text">섭섭</div>
-				</div>
 			</div>
 		</div>
 	</div>
 	
 	<div class="tableBigDiv">
 		<div class="tableMiddleDiv">
-			<c:forEach items="${picture}" var="p">
-				<div class="tablesmallDiv">
-					<a href="detailPage.go?p_no=${p.p_no}">
-						<img src="resources/img/${p.img}" class="picture">
-					</a>
-				</div>
-			</c:forEach>
+			<c:if test="${not empty picture}">
+				<c:forEach items="${picture}" var="p">
+					<div class="tablesmallDiv">
+						<a href="detailPage.go?p_no=${p.p_no}">
+							<img src="resources/img/${p.img}" class="picture">
+						</a>
+					</div>
+				</c:forEach>
+			</c:if>
 		</div>	
 	</div>
 </body>

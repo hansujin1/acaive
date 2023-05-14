@@ -20,5 +20,13 @@
 	<select id="getMemberId" resultType="com.accaive.test.Member">
 	select * from member where id = #{id}
 	</select>
+	
+	<insert id="join">
+	insert into member values(empno_seq.nextval,#{id},#{pw},#{nickname})
+	</insert>
+	
+	<select id="getSearchPricture" resultType="com.accaive.test.Jjal">
+	select * from JJAL where TAG like '%'||#{search}||'%'
+	</select>
 
 </mapper>

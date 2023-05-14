@@ -90,5 +90,51 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpServletRequest req) {
+		//로그아웃 하기
+		
+		pDAO.logout(req);
+		
+		pDAO.checkLogin(req);
+		pDAO.getAllJJAL(req);
+		req.setAttribute("contentPage", "home.jsp");
+		
+		return "index";
+	}
 	
+	@RequestMapping(value = "/regGo", method = RequestMethod.GET)
+	public String regGo(HttpServletRequest req) {
+		//회원가입 페이지로 이동
+		
+		pDAO.logout(req);
+		
+		pDAO.checkLogin(req);
+		req.setAttribute("contentPage", "regPage.jsp");
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/reg.do", method = RequestMethod.POST)
+	public String regDo(HttpServletRequest req,Member m) {
+		//회원가입 페이지로 이동
+		
+		pDAO.join(req,m);
+		pDAO.checkLogin(req);
+		pDAO.getAllJJAL(req);
+		req.setAttribute("contentPage", "home.jsp");
+		
+		return "index";
+	}
+	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String search(HttpServletRequest req,Jjal j) {
+		//내용찾기
+		
+		pDAO.checkLogin(req);
+		pDAO.searchJJAL(req,j);
+		req.setAttribute("contentPage", "home.jsp");
+		
+		return "index";
+	}
 }
