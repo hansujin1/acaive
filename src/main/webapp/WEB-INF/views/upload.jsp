@@ -18,8 +18,9 @@
 					<div class="uploadModalSmallDiv">
 						<span style="font-size: 20pt;">짤 업로드</span> &nbsp; ${r}
 							<label class="pictureUplode"> <!-- photo upload -->
-							+
-							<input class="fileUpload" type="file" name="img">
+							<img class="uploadImg" id="image" style="display: none;">
+							<span id="spanTag">+</span>
+							<input class="fileUpload" type="file" name="img" id="img">
 							
 							</label>
 							<div class="tagDiv"> <!-- 태그 입력 하는 Div -->
@@ -39,4 +40,19 @@
 	</div> 
  </div>
 </body>
+<script type="text/javascript">
+document.getElementById("img").onchange = function () {
+    var reader = new FileReader();
+    $('#image').css({ 'display' : '' });
+    $('#spanTag').css('display', 'none');
+    reader.onload = function (e) {
+        // get loaded data and render thumbnail.
+        
+        document.getElementById("image").src = e.target.result;
+    };
+
+    // read the image file as a data URL.
+    reader.readAsDataURL(this.files[0]);
+};
+</script>
 </html>
