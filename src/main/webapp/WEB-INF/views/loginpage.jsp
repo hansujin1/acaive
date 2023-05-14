@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +9,7 @@
 <body>
 <div style="display: flex;">
 <div>
-<form action="logingo.do" method="post">
+<form action="logingo.do" method="post" name="loginForm" onsubmit="return logincheckCall();">
 	<div>
 		<div class="uploadModalMidDiv_login" style="width: 500px; height: 550px; border: 1px solid gray;">
 			<div class="uploadModalSmallDiv">
@@ -23,7 +21,7 @@
 					<span class="loginIDText">ID</span>
 				</div>
 				<div style="margin-left: 25px;">
-					<input name="id" class="loginIDInput">
+					<input name="id" class="loginIDInput" id="id">
 				</div>
 			</div>
 			
@@ -32,7 +30,7 @@
 					<span style="font-size: 15pt;">PW</span>
 				</div>
 				<div style="margin-left: 15px;">
-					<input name="pw" class="loginPWInput">
+					<input name="pw" class="loginPWInput" id="pw">
 				</div>
 			</div>
 			<div class="result">${r}</div>

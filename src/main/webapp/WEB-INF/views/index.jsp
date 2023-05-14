@@ -5,15 +5,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script type="text/javascript" src="resources/js/jQuery.js"></script>
+<script type="text/javascript" src="resources/js/valid.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href='resources/indexCss.css' rel="stylesheet" type="text/css">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-	function upload() {
-		window.open('upload.JJAL','upload','width=500,height=500')
-	}
-</script>
 </head>
 <body style="height: 100%;">
  <div class="entire">
