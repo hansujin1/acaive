@@ -30,7 +30,7 @@
 					<span style="font-size: 15pt;">PW</span>
 				</div>
 				<div style="margin-left: 15px;">
-					<input name="pw" class="loginPWInput" id="pw">
+					<input type="password" name="pw" class="loginPWInput" id="pw">
 				</div>
 			</div>
 			<div class="result">${r}</div>

@@ -12,7 +12,7 @@
 <body>
 <div><!-- 모달 창 만들기 -->
 	<div>
-		<form action="jjal.upload" method="post" enctype="multipart/form-data">
+		<form action="jjal.upload" method="post" enctype="multipart/form-data" name="jjalForm" onsubmit="return jjalUpload()">
 			<div class="uploadModalBigDiv">
 				<div class="uploadModalMidDiv" style="width: 500px; height: 550px;">
 					<div class="uploadModalSmallDiv">
@@ -27,7 +27,7 @@
 								<input class="tagInput" type="text" placeholder="태그 입력" name="tag" id="tag">
 							</div>
 							<div class="tagDiv">
-								<textarea name="explanation" style="width: 800px;height: 80px;"></textarea>
+								<textarea name="explanation" id="explanation" style="width: 800px;height: 80px;"></textarea>
 							</div>
 							<div class="uploadButton_div">
 								<button class="uploadButton_in">등록</button>
