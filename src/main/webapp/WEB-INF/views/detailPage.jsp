@@ -11,9 +11,10 @@
 <body>
 <div>
 	<div class="download">
-		<span>
-			<button class="header_button" >다운로드(구현중)</button>
-		</span>
+		<form action="img.down" method="post">
+			<input type="hidden" name="img" value="${picture.img}">
+			<button class="header_button" >다운로드</button>
+		</form>
 	</div>
 	<div>
 		<div class="nicknameDlt">작성자 : ${picture.nickname }</div>

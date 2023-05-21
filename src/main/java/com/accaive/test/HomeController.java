@@ -1,10 +1,12 @@
 package com.accaive.test;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 
@@ -136,5 +140,12 @@ public class HomeController {
 		req.setAttribute("contentPage", "home.jsp");
 		
 		return "index";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/img.down", method = RequestMethod.POST)
+	public byte[] download(@RequestParam String img, HttpServletResponse response) throws IOException {
+		
+		return pDAO.download(img,response);
 	}
 }

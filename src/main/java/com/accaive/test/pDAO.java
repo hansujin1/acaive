@@ -1,18 +1,26 @@
 package com.accaive.test;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FileCopyUtils;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 //기능이 되도록 하는 Java
 @Service
 public class pDAO {
+	
+	@Autowired
+	ServletContext servletContext;
 	
 	@Autowired
 	private SqlSession ss;
@@ -148,6 +156,21 @@ public class pDAO {
 		
 		req.setAttribute("picture", JJAL);
 		
+	}
+
+	public byte[] download(String img, HttpServletResponse response) throws IOException {
+		String savePath = servletContext.getRealPath("resources/img"); 
+		System.out.println(savePath);
+		File file = new File(savePath,img);
+		
+		byte[] bytes = FileCopyUtils.copyToByteArray(file);
+		
+		String fn = new String(file.getName().getBytes(),"utf-8");
+		response.setHeader("Content-Disposition","attachment;filename=\""+fn+"\"");
+		
+		response.setContentLength(bytes.length);
+		
+		return bytes;
 	}
 
 	
